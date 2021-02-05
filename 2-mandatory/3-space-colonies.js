@@ -15,7 +15,12 @@
   
 */
 
-function colonisers() {}
+function colonisers(arr) {
+  var newArr = arr.filter(function(params) {
+    return params.substring(0,1) === "A" && params.substring(6, params.length)
+  })
+  return newArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

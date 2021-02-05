@@ -7,8 +7,14 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function eligibleStudents() {
-
+function eligibleStudents(arr) {
+  var newArr = arr.filter(function(params) {
+        return params[1] >= 8;
+      })
+  var newArr2 = newArr.map(function (params) {
+    return params.shift();
+  })
+  return newArr2;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -22,6 +28,7 @@ const attendances = [
   ["Nina", 10]
 ]
 
+const { stringify } = require('querystring');
 const util = require('util');
 
 function test(test_name, actual, expected) {

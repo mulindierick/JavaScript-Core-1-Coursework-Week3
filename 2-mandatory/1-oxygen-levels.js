@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function safeLevels() {}
+function safeLevels(arr) {
+  var newArr = arr.map(function(params) {
+    return params.replace("%", "")
+  });
+  var newArr2 = newArr.find(function(params) {
+    return parseFloat(params) > 19.5 && parseFloat(params) < 23.5;
+  })
+  return newArr2 + "%";
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
